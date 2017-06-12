@@ -1,0 +1,4 @@
+---- authserv_YunPort Matches (3 in 3 files) ----
+Centralserver.c (src):	port = htons(auth_server->authserv_YunPort);// ·þÎñÆ÷¶Ë¿Ú
+Conf.c (src):	new->authserv_YunPort= yunPort;
+Conf.h (src):	char *authserv_YunPort;

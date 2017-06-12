@@ -1,0 +1,10 @@
+$Id: BUGS,v 1.3 2010/02/04 10:27:09 aland Exp $
+
+Testing can show the presense of bugs, but not their absence.
+                -- Dijkstra
+
+Radlogin respectively send_server in sendserver.c does not honour a 
+ACCESS_CHALLENGE packet from the RADIUS server. 
+
+There are some issues that occur on occasion when defining clients with
+hostnames, rather than dotted-quad IPs.  
