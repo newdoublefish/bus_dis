@@ -1,0 +1,14 @@
+## Server Name or Client/Server pair		Key		
+## ----------------				---------------
+#
+#portmaster.elemental.net			hardlyasecret
+#portmaster2.elemental.net			donttellanyone
+#
+## uncomment the following line for simple testing of radlogin
+## with freeradius-server
+#
+120.25.227.65				testing123
+
+radius          1645/udp        # RADIUS access requests
+radacct         1646/udp        # RADIUS accounting requests
+

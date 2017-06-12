@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<title>title</title>
+		<METAHTTP-EQUIV="Pragma" CONTENT="no-cache">
+		<METAHTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+		<METAHTTP-EQUIV="Expires" CONTENT="0">
+		<link rel="stylesheet" href="css/video.css" />
+		<link rel="stylesheet" href="css/video-js.css" />
+		<!--<link rel="stylesheet" href="build/mediaelementplayer.min.css" />-->
+		<link rel="stylesheet" href="css/pay.css" />
+		<link rel="stylesheet" href="css/mheader.css" />
+		<link rel="stylesheet" href="css/over-service.css" />
+  		<link href="css/video-js.min.css" rel="stylesheet" type="text/css">
+
+	</head>
+
+	<body>
+    	<header class="yk-header" id="mheader" style="height: 40px;line-height: 40px;">
+    		<div class="yk-header-container" id="mheader_box">
+        		<div class="yk-header-box">
+					<div class="yk-logo" style="height: 40px;line-height: 40px; margin: 0;padding: 0;">
+						<a href="#" class="logo" style="margin: 0;">
+						<span class="title">GOSPELL</span>
+						</a>
+					</div>
+					<div class="yk-ucenter">
+						<div class="yk-playrecords" id="logout">
+							<span style="color: #337ab7;font-size: 12px;">注销登录</span>
+						</div>
+						<div class="yk-playrecords">
+							<div class="yk-userlog-after" id="mheader_logafter" style="opacity: 1;" data-stat-role="ck">
+								<div class="yk-handle" id="mheader_userlog_handle"> 
+									<div class="yk-userlog-info"> 
+										<div class="yk-userlog-avatar" id="mheader_userphoto">
+											<a href="user.html"><img style="width: 30px;height: 30px;" src="/wifidog/img/head.jpg"></a>
+										</div>
+									</div> 
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+    		</div>
+    	</header>
+    <!-- m-header end -->
+		</div>
+		<div id="content">
+			<ul id="videoList">
+					<!--<video id=example-video width=400 height=220 class="video-js vjs-default-skin" controls="controls">
+  						<source
+     						src="https://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8"
+     						type="application/x-mpegURL">
+					</video>-->
+			</ul>
+			<script type="text/javascript">
+				var base_url = 'http://'+document.location.hostname;
+			</script>
+		</div>
+		<div class="nav">
+			<div data-type="0">
+				<span href='javascript:void(0);'>点播</span>
+			</div>
+			<div data-type="1">
+				<span href='javascript:void(0);'>直播</span>
+			</div>
+			<!--<div data-type="2">
+				<span href='javascript:void(0);'>资讯</span>
+			</div>
+			<div data-type="3">
+				<span href='javascript:void(0);'>周边</span>
+			</div>-->
+		</div>
+		<script src="js/jquery.min.js"></script>
+  		<script type="text/javascript" src="js/video.js"></script>
+  		<script type="text/javascript" src="js/videojs-contrib-hls.js"></script>
+		<!--<script src="build/mediaelement-and-player.min.js"></script>-->
+		<script type="text/javascript" src="js/constant.js"></script>
+		<!--<script type="text/javascript" src="demo/hls_streams.js"></script>-->
+		<script type="text/javascript" src="js/portal.js"></script>
+		<script type="text/javascript" src="js/pay.js"></script>
+	</body>
+
+</html>

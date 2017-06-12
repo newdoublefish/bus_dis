@@ -1,0 +1,38 @@
+#payDiv {
+	padding-top: 20px;
+	display: block;
+	POSITION: absolute;
+	left: 50%;
+	background-color: #ddd;
+	top: 40%;
+	width: 200px;
+	height: 150px;
+	margin-left: -100px;
+	margin-top: -75px;
+	border: 1px solid #585858;
+	text-align: center;
+	z-index: 99;
+}
+#month{
+	width: 50px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.month-pay{
+	margin-top: 30px;
+}
+#month{
+	text-align: right;
+	
+}
+.nav-pay {
+	color: red;
+	width: 100%;
+	margin-top: 40px;
+}
+.nav-pay button{
+	width: 40%;
+	margin-left: 5px;
+	margin-right: 5px;
+}

@@ -1,0 +1,7 @@
+ABORT BUSY
+ABORT ERROR
+ABORT NO DIALTONE
+SAY nSending break to the modemn
+'' K
+'' +++ATH
+SAY nGoodbayn

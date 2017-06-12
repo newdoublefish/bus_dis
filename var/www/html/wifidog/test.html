@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>HTTP Live Streaming Example</title>
+		<link rel="stylesheet" href="css/video.css" />
+		<link rel="stylesheet" href="css/video-js.css" />
+		<link rel="stylesheet" href="css/pay.css" />
+		<link rel="stylesheet" href="css/mheader.css" />
+		<link rel="stylesheet" href="css/over-service.css" />
+  		<link href="css/video-js.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<img src="http://192.168.1.101/usb0/S01E02.jpg" width=400 height=220>
+	<video id="example-video-1" width=400 height=220 class="video-js vjs-default-skin" controls="controls" poster="png/graf1.png">
+  		<source
+     		src="http://192.168.1.101/1_channel.m3u8"
+     		type="application/x-mpegURL">
+	</video>
+	<video id="example-video-2" width=400 height=220 class="video-js vjs-default-skin" controls="controls" poster="png/graf1.png">
+  		<source
+     		src="http://192.168.1.101/2_channel.m3u8"
+     		type="application/x-mpegURL">
+	</video>	
+	<script src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/video.js"></script>
+	<script type="text/javascript" src="js/videojs-contrib-hls.js"></script>
+	<script type="text/javascript">
+		var player = videojs('example-video-1');
+		var player = videojs('example-video-2');
+		//player.play();
+	</script>
+</body>
+</html>
+

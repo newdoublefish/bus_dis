@@ -1,0 +1,19 @@
+nodetach
+lock
+/dev/ttyACM2
+115200
+user "card"
+password "card"
+crtscts
+show-password
+usepeerdns
+noauth
+noipdefault
+novj
+novjccomp
+noccp
+defaultroute
+ipcp-accept-local
+ipcp-accept-remote
+connect 'chat -s -v -f /home/developer/workspace/4g/chat-wcdma-connect'
+disconnect 'chat -s -v -f /home/developer/workspace/4g/chat-wcdma-disconnect'

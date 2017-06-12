@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>个人中心</title>	
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+
+		<link rel="stylesheet" href="css/pay.css" />
+		<link rel="stylesheet" href="css/user.css" />
+	</head>
+
+	<body>
+		<!-- 用户登录信息 -->
+    <div class="m-box">
+        <div class="m-box-items m-box-items-full">
+            
+            <section class="m-mine-userCard">
+                <a  class="userCard-link" data-rseat="608081_myspace">
+                    <div class="userCard-pic">
+                        
+                        <span class="c-img" style="background-image:url(/image/img/head.png);"></span>
+                        
+                    </div>
+                    <div class="userCard-cont">
+                        <div class="c-title">
+                        	<span class="c-name" id="username">username</span>
+                        </div>
+                    </div>
+                    <div class="go-next">
+                        <i class="c-glyphicon c-glyphicon-arrowRight"></i>
+                    </div>
+                </a>
+                
+                <a href="payvip.html"  class="c-btn-vipBtn">开通VIP</a>
+                
+            </section>
+            
+        </div>
+    </div>
+    <!-- 用户登录信息 end-->
+
+    <!-- 播放记录，收藏，订阅 -->
+    <div class="m-box">
+        <div class="m-box-items m-box-items-full">
+            <a class="m-user-base" data-rseat="608081_myrecord">
+                <span class="base-tit">
+                     <i class="c-glyphicon"></i>会员有效时间
+                     <span class="c-des" id="expDate"></span>
+                </span>
+                <i class="c-glyphicon c-glyphicon-arrowRight"></i>
+            </a>
+        </div>
+        
+        <div class="m-box-items m-box-items-full">
+            <a class="m-user-base" data-rseat="608081_myrecord">
+                <span class="base-tit">
+                     <i class="c-glyphicon"></i>播放记录
+                     <span class="c-des">记录看过的精彩</span>
+                </span>
+                <i class="c-glyphicon c-glyphicon-arrowRight"></i>
+            </a>
+        </div>
+
+        <div class="m-box-items m-box-items-full">
+            <section class="m-pic m-pic-horizontal m-pic-horizontal-sliding m-sliding" glue-id="record" glue-component="page.home.component.record" glue-behavior="common.behavior.horizontalScroll.horizontalScroll" style="display: none;">
+                <ul class="m-pic-list m-sliding-list" glue-node="recordList" style="transform: translate(0px, 0px) translateZ(0px);">
+                </ul>
+
+                <script type="text/velocity" glue-node="recordTemplate">
+                    
+                        #foreach($record in $playRecordList)
+                        <li>
+                            <div class="piclist-img">
+                                <a 
+                                    href="$record.videoUrl"
+                                    class="piclist-link"
+                                    style="background-image:url($record.resizedVideoImageUrl);"
+                                    data-rseat="609131_myrecordvideo">
+                                    <div class="c-rb"><span class="c-date">$record.duration</span></div>
+                                </a>
+                            </div>
+                            <div class="piclist-title">
+                                <div class="c-title"><a href="$record.videoUrl">$record.videoName</a></div>
+                            </div>
+                        </li>
+                        #end
+                    
+                </script>
+            </section>
+
+        </div>
+        
+
+        <!-- 图片列表 end -->
+        <div class="m-box-items m-box-items-full">
+            <a class="m-user-base borderT" data-rseat="608081_myfavorite">
+                <span class="base-tit">
+                     <i class="c-glyphicon"></i>收藏
+                </span>
+                <i class="c-glyphicon c-glyphicon-arrowRight"></i>
+            </a>
+            <a href="javascript:void(0)" class="m-user-base" data-rseat="609131_mysubscribe" glue-component="page.home.component.toLogin" glue-id="page.home.component.toLogin_27">
+                <span class="base-tit">
+                     <i class="c-glyphicon"></i>订阅
+                </span>
+                <i class="c-glyphicon c-glyphicon-arrowRight"></i>
+            </a>
+        </div>
+    </div>
+    <!-- 播放记录，收藏，订阅 end -->
+    <!-- 设置 -->
+    <div class="m-box">
+        <div class="m-box-items m-box-items-full">
+            
+            <a class="m-user-base" data-rseat="6091301_myaccount">
+                <span class="base-tit">
+                     <i class="c-glyphicon"></i>我的账号
+                </span>
+                <i class="c-glyphicon c-glyphicon-arrowRight"></i>
+            </a>
+            
+            <a class="m-user-base" href="javascript:void(0)"  data-rseat="608081_mysecurity" glue-component="page.home.component.toLogin" glue-id="page.home.component.toLogin_28">
+                <span class="base-tit">
+                     <i class="c-glyphicon"></i>安全中心
+                </span>
+                <i class="c-glyphicon c-glyphicon-arrowRight"></i>
+            </a>
+        </div>
+    </div>
+    
+		<script src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/constant.js"></script>
+		<script src="js/pay.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				getUser(function(data){
+					name = data;
+					$('#username').text(name);
+					getUserDetail();
+				});
+//				$('.c-btn-vipBtn').click(function(){
+//					showPay();
+//				});
+			});
+			
+			function getUserDetail(){
+				$.get(base_url+'aliPayRemoteServer/user/detail?username='+name, function(data) {
+					data = JSON.parse(data);
+					if(data.code !== '1000') return;
+					$('#expDate').text(data.data.expDate);
+					if(dateCompare(data.data.expDate,data.data.expDate)){
+						$('.c-btn-vipBtn').text("续费会员");
+					}
+				});
+			}
+
+			function dateCompare(startdate, enddate) {
+				var arr = startdate.split("-");
+				var starttime = new Date(arr[0], arr[1], arr[2]);
+				var starttimes = starttime.getTime();
+			
+	//			var arrs = enddate.split("-");
+	//			var lktime = new Date(arrs[0], arrs[1], arrs[2]);
+				var lktime = new Date();
+				var lktimes = lktime.getTime();
+			
+				if(starttimes >= lktimes) {
+					return true;
+				} else
+					return false;
+			
+			}
+		</script>
+	</body>
+
+</html>

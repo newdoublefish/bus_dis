@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!-- saved from url=(0132)http://m.iqiyi.com/pay.html?platform=97ae2982356f69d8&serviceCode=lyksc7aq36aedndk&pid=a0226bd958843452&fc=a07f43eca43cb5c8&amount=3 -->
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="content-language" lang="zh-CN">
+		<meta name="viewport" content="initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="applicable-device" content="mobile">
+		<title>购买VIP会员</title>
+		<link type="text/css" href="css/pay-vip.css" rel="stylesheet">
+	</head>
+
+	<body class="" style="width: 100%;">
+		<!-- 用户登录信息 -->
+
+		<div class="m-box" glue-component="component.page.cashier.userInfo" glue-id="component.page.cashier.userInfo_24">
+			<div class="m-box-items m-box-items-full">
+				<section class="m-pay-userCard">
+					<a href="javascript:;" class="userCard-pic">
+						<img glue-node="portrait" width="40" height="40" src="/image/img/head.png" alt="lylhao">
+					</a>
+					<div class="userCard-cont">
+						<div class="user-title">
+							<a href="javascript:;" id="username" class="c-user-link">test</a>
+						</div>
+						<div class="c-des {{data.tipsClass}}" glue-bind="data.tips">购买VIP会员，直播点播随意看，畅游高速网络</div>
+					</div>
+				</section>
+			</div>
+		</div>
+		<!-- 用户登录信息 end -->
+		<!-- 黄金vip会员 -->
+		<div class="m-box" glue-component="component.page.cashier.package" glue-id="component.page.cashier.package_26">
+			<div class="m-box-items m-box-items-full">
+				<section class="m-pay-money">
+					<ul class="pay-money-list" glue-bind-html="data.html" glue-node="package">
+						<li class="selected" data-amount="1">
+							<div class="pay-item">
+								<div class="info">
+									<div class="inner"> <span class="c-money">10元</span>
+										<span class="c-month ">10元/月</span> </div>
+								</div>
+								<div class="title"><span class="monthly">月</span></div>
+								<div class="c-rb"><i class="c-glyphicon c-glyphicon-ok"></i></div>
+							</div>
+						</li>
+						<li class="" data-amount="3">
+							<div class="pay-item">
+								<div class="info">
+									<div class="inner"> <span class="c-money">30元</span>
+										<span class="c-month ">10元/月</span> </div>
+								</div>
+								<div class="title">季</div>
+								<div class="c-rb"><i class="c-glyphicon c-glyphicon-ok"></i></div>
+							</div>
+						</li>
+						<li class="" data-amount="6">
+							<div class="pay-item">
+								<div class="info">
+									<div class="inner"> <span class="c-money">60元</span>
+										<span class="c-month ">10元/月</span> </div>
+								</div>
+								<div class="title">半年</div>
+								<div class="c-rb"><i class="c-glyphicon c-glyphicon-ok"></i></div>
+							</div>
+						</li>
+						
+						<li class="" data-amount="12">
+							<div class="pay-item">
+								<div class="info">
+									<div class="inner"> <span class="c-money">120元</span>
+										<span class="c-month ">10元/月</span> </div>
+								</div>
+								<div class="title">年</div>
+								<div class="c-rb"><i class="c-glyphicon c-glyphicon-ok"></i></div>
+							</div>
+						</li>
+					</ul>
+				</section>
+			</div>
+		</div>
+		<!-- 黄金vip会员 end -->
+		<!-- 选择支付方式 -->
+		<div class="m-box" glue-component="component.page.cashier.payment" glue-id="component.page.cashier.payment_29">
+			<div class="m-box-items m-box-items-full">
+				<section class="m-payWay" glue-node="list">
+					<div class="title">选择支付方式</div>
+					<ul class="m-payWay-list" glue-show="data.showCommon" glue-bind-html="data.commonList" glue-node="commonList" style="display: block;">
+						<li class="" data-paytype="1" style="display: none;">
+							<div class="c-info"><i class="c-pay-icon" style="background-image:url(/image/img/c-pay-weixin.png)"></i><span class="des">微信支付<em class="c-tip"></em></span></div>
+							<a href="javascript:void(0)" class="c-link-info"><i class="c-radio-icon"></i></a>
+						</li>
+						<li class="selected" data-paytype="2">
+							<div class="c-info"><i class="c-pay-icon" style="background-image:url(/image/img/c-pay-zfb.png)"></i><span class="des">支付宝支付<em class="c-tip"></em></span></div>
+							<a href="javascript:void(0)" class="c-link-info"><i class="c-radio-icon"></i></a>
+						</li>
+						<li class="" data-paytype="3" style="display: none;">
+							<div class="c-info"><i class="c-pay-icon" style="background-image:url(//www.qiyipic.com/common/fix/h5-v3/c-pay-baidu.png)"></i><span class="des">百度钱包支付<em class="c-tip"></em></span></div>
+							<a href="javascript:void(0)" class="c-link-info"><i class="c-radio-icon"></i></a>
+						</li>
+					</ul>
+					<ul class="m-payWay-list" glue-hide="data.showCommon" glue-bind-html="data.autoRenewList" glue-node="autoRenewList" style="display: none;">
+						<li class="" data-paytype="48">
+							<div class="c-info"><i class="c-pay-icon" style="background-image:url(//www.qiyipic.com/common/fix/h5-v3/c-pay-baidu.png)"></i><span class="des">百度钱包支付<em class="c-tip"></em></span></div>
+							<a href="javascript:void(0)" class="c-link-info"><i class="c-radio-icon"></i></a>
+						</li>
+						<li class="" data-paytype="70">
+							<div class="c-info"><i class="c-pay-icon" style="background-image:url(//www.qiyipic.com/common/fix/h5-v3/c-pay-tel.png)"></i><span class="des">手机话费支付<em class="c-tip">(25元/月)</em></span></div>
+							<a href="javascript:void(0)" class="c-link-info"><i class="c-radio-icon"></i></a>
+						</li>
+					</ul>
+				</section>
+			</div>
+			<script type="text/html" glue-node="tpl">
+				#foreach($item in $list)
+				<li class="#if($item.selected)selected#end" data-payType="$!{item.payType}">
+					<div class="c-info"><i class="c-pay-icon" style="background-image:url($!{item.iconUrl})"></i><span class="des">$!{item.name}<em class="c-tip">$!{item.tips}</em></span></div>
+					<a href="javascript:void(0)" class="c-link-info"><i class="c-radio-icon"></i></a>
+				</li>
+				#end
+			</script>
+		</div>
+		<!-- 选择支付方式 end -->
+		<!-- 底部固定支付按钮 -->
+		<section class="m-pay-fixedBottom" glue-component="component.page.cashier.payButton" glue-id="component.page.cashier.payButton_31">
+			<div class="inner">
+				<div class="info">
+					<div glue-hide="hide" style="display: block;">
+						<span class="c-money">总计￥<span id="total-money" glue-bind="price">0</span></span>
+						<span class="c-tip" glue-bind="benefit"></span>
+					</div>
+				</div>
+				<a href="javascript:;" glue-node="submit" class="c-btn-pay">确认支付</a>
+			</div>
+		</section>
+		<!-- 底部固定支付按钮 end -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/constant.js"></script>
+		<script src="js/pay.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				getUser(function(data){
+					name = data;
+					$('#username').text(name);
+				});
+				$('.pay-money-list li').click(function(){
+					$('.pay-money-list li').attr('class','');
+					$(this).attr('class','selected');
+					var total = $(this).find('.c-money').text();
+					total = total.substr(0,total.length-1);
+					$('#total-money').text(total);
+				});
+				$('.c-btn-pay').click(function(){
+					var month = $('.pay-money-list li').filter('.selected').attr('data-amount');
+					getPayparams(month);
+				});
+				$('.pay-money-list li').first().trigger('click');
+			});
+			
+
+
+		</script>
+	</body>
+
+</html>

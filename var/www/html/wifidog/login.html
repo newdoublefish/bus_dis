@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Log in with your account</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/constant.js"></script>
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container">
+    <script>
+        function Juge(myform){
+            if (myform.username.value == ""){alert("请输入用户名!");myform.username.focus();return false;}
+            if (myform.pass.value == ""){
+                alert("请输入密�?");
+                myform.pass.focus();
+                return false;
+            }else{
+                console.log(document.getElementById("userForm"));
+                //console.log(getQueryString("gw_address"));
+                //document.getElementById("userForm").setAttribute("action",'http://' + location.hostname + ':2060/wifidog/radius');
+            }
+        }
+        
+        //function getQueryString(name) {
+    	//    /*中文解析会乱�?
+        //    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        //    var r = window.location.search.substr(1).match(reg);
+        //    if (r != null) return unescape(r[2]); return null;
+        //    */
+        //    var LocString=String(window.document.location.href);
+        //    var rs=new RegExp("(^|)"+name+"=([^&]*)(&|$)","gi").exec(LocString),tmp;
+        //    if(tmp=rs) return tmp[2];
+        //    return null;
+        //} 
+    </script>
+    <form id="userForm" method="GET"  class="form-signin" onsubmit="return Juge(this)">
+        <h2 class="form-heading">Log in</h2>
+        <div id="userTable" class="form-group ${error != null ? 'has-error' : ''}">
+            <input id="userId" name="username" type="text" class="form-control" placeholder="Username" autofocus="true"/>
+            <input name="pass" type="password" class="form-control" placeholder="Password"/>
+            <input type="hidden" name="token" id="myToken">
+            <script type="text/javascript">
+                 var myToken = document.getElementById('myToken');
+                 myToken.value = (new Date()).valueOf();
+                 console.log(myToken);
+            </script>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Go</button>
+            <h4 class="text-center"><a href="http://192.168.0.251/wifidog/regist.html">Create an account</a></h4>
+        </div>
+    </form>
+    <!--<input class="btn btn-lg btn-primary btn-block" type="button" onclick="window.location.href('http://' + location.hostname +':8080/wifidog/')"  value="ActiveMQ Management" />-->
+</div>
+<script>
+	$.get('http://192.168.0.251:8888/getname',function(data){
+		if(!isEmpty(data)){
+			window.location.href = base_url + "wifidog/portal.html";
+		}
+	});
+    //document.getElementById("userForm").setAttribute("action",'http://' + location.hostname + ':2060/wifidog/radius');
+    document.getElementById("userForm").setAttribute("action",'http://120.25.227.65:8089/aliPayRemoteServer/user/login');
+    console.log(getParams("checked"));
+    if(getParams("checked")==1){
+    	$("#userTable").append('<h6 class="text-center">用户名或密码错误</h6>'); 
+    	$("#userId").val(getParams("username"));
+    }
+</script>
+</body>
+</html>
